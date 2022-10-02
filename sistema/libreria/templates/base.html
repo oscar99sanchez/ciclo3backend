@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>virtualtech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <header class="header">
+        <div class="contenedor contenido-header">
+            <div class="imagen-header">
+                <picture>
+                    <source
+                        sizes="1920w" 
+                        srcset="{% static 'imagenes/icono-header.svg' %}"
+                        type="image/avif">
+                    <source
+                        sizes="1920w" 
+                        srcset="{% static 'imagenes/icono-header.svg' %}" 
+                        type="image/webp">
+                    <source
+                        sizes="1920w" 
+                        srcset="{% static 'imagenes/icono-header.svg' %}" 
+                        type="image/jpeg">
+                    <!-- <img src="{% static 'imagenes/icono-header.svg' %}" lazyalt="imagen" width="1000" height="600"> -->
+                </picture>
+            </div> <!-- .imagen-header -->
+
+            <div class="texto-header">
+                <p class="tagline-producto">Periféricos</p>
+                <h1 class="nombre-producto degradado-verde">Tienda virtualtech</h1>
+                <p class="descripcion-producto">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore et, a, nam beatae sint sit quos unde pariatur, libero eum ab molestias tempore temporibus fugit hic est vitae quasi. Fugit?</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="contenedor">
+        <div class="iconos">
+            <div class="icono">
+                <img src="{% static 'imagenes/icono-sonido.svg' %}" alt="imagen icono">
+                <h3>Gran Sonido</h3>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis convallis porttitor sodales. Duis accumsan lorem neque.</p>
+            </div>
+
+            <div class="icono">
+                <img src="{% static 'imagenes/icono-garantia.svg' %}" alt="imagen icono">
+                <h3>Garantía de por vida</h3>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis convallis porttitor sodales. Duis accumsan lorem neque.</p>
+            </div>
+
+            <div class="icono">
+                <img src="{% static 'imagenes/icono-bateria.svg' %}" alt="imagen icono">
+                <h3>+20 Horas de Bateria</h3>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis convallis porttitor sodales. Duis accumsan lorem neque.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sobre-tech">
+        <div class="contenedor sobre-tech-grid">
+            <div class="texto-sobre-tech">
+                <h2>Sobre los <span>TechPRO</span> </h2>
+                <p>Pellentesque faucibus eu turpis vel ornare. Suspendisse pellentesque ut tellus quis ullamcorper. Praesent sed mi id tortor ultrices cursus. Sed suscipit nibh nisi, vel elementum tellus lobortis sed.</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="contenedor modelos">
+        <h2 class="text-center degradado-verde header-modelos">Elige tus Periféricos</h2>
+
+        <div class="listado-modelos">
+            <a class="categoria" href="{% url 'libros' %}">
+                <div class="modelo">
+                    <h3>Mouses</h3>
+                    <p class="precio">Ver catalogo y precios</p>
+                </div>
+            </a>
+            
+            <a class="categoria" href="teclados.html">
+                <div class="modelo">
+                    <h3>Teclados</h3>   
+                    <p class="precio">Ver catalogo y precios</p>
+                </div>
+            </a>
+            
+            <a class="categoria" href="monitores.html">
+                <div class="modelo">
+                    <h3>Monitores</h3>
+                    <p class="precio">Ver catalogo y precios</p>
+                </div>
+            </a>
+
+            <a class="categoria" href="mousePad.html">
+                <div class="modelo">
+                    <h3>Mouse pad</h3>
+                    <p class="precio">Ver catalogo y precios</p>
+                </div>
+            </a>
+
+            <a class="categoria" href="diademas.html">
+                <div class="modelo modelo-z">
+                    <h3>Diademas</h3>
+                    <p class="precio">catalago</p>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <section class="newsletter">
+        <div class="contenido-newsletter contenedor">
+            <div class="texto-newsletter">
+                <h2>Recibe Actualizaciones</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur vitae maxime praesentium assumenda nulla consequatur illo facere ullam, debitis dolore. Aliquid a recusandae nam beatae dolor veniam et, exercitationem placeat?</p>
+
+                <form class="formulario">
+                    <div class="input">
+                        <input type="text" placeholder="Tu Email" >
+                    </div>
+
+                    <input type="submit" value="Inscribirme">
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <p>Todos los derechos reservados</p>
+    </footer>
+
+
+    <script src="js/imagenes.js"></script>
+</body>
+</html>
