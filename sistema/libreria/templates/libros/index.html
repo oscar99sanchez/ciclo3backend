@@ -27,7 +27,11 @@ $(document).ready(function(){
 			<a href="{% url 'inicio' %}" class="btn btn-primary">Pagina principal</a>
 			<h2>Mouses <b>Gamer</b></h2>
 			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+			{% if user.is_authenticated and user.is_superuser %}
             <a href="{% url 'crear' %}" class="btn btn-primary">Agregar producto</a>
+			{% else %}
+			{% endif %}
+
 			<!-- Carousel indicators -->
 			<ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -47,8 +51,13 @@ $(document).ready(function(){
 								<div class="thumb-content">
 									<h4>{{ libro.producto }}</h4>									
 									<p class="item-price"> <b>${{ libro.precio }}</b></p>
+									{% if user.is_authenticated and user.is_superuser %}
 									<a href="#" class="btn btn-primary">editar</a>
                                     <a href="{% url 'eliminar' libro.id %}" class="btn btn-primary" role="button">eliminar</a>
+									{% else %}
+									<a href="#" class="btn btn-primary">Comprar</a>
+									{% endif %}
+
 								</div>						
 							</div>
 						</div>

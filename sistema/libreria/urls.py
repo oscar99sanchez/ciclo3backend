@@ -14,6 +14,9 @@ urlpatterns = [
     path('libros/crear', views.crear, name='crear'),
     path('libros/editar', views.editar, name='editar'),
     path('eliminar/<int:id>', views.eliminar, name='eliminar'),
+    path('singup', views.singup, name='singup'),
+    path('logout', views.singout, name='logout'),
+    path('singin', views.singin, name='singin'),
 
 
     

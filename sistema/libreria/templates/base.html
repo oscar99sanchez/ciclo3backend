@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
@@ -117,16 +118,15 @@
     <section class="newsletter">
         <div class="contenido-newsletter contenedor">
             <div class="texto-newsletter">
-                <h2>Recibe Actualizaciones</h2>
+                {% if user.is_authenticated %}
+                <h2>Cerrar sesion</h2>
+                <a href="{% url 'logout' %}" class="btn btn-primary col-md-12">Cierra sesion aquí</a>
+                {% else %}  
+                <h2>¡Registrate!</h2>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur vitae maxime praesentium assumenda nulla consequatur illo facere ullam, debitis dolore. Aliquid a recusandae nam beatae dolor veniam et, exercitationem placeat?</p>
+                <a href="{% url 'singup' %}" class="btn btn-primary col-md-12">Registrate aquí</a>
+                {% endif %}
 
-                <form class="formulario">
-                    <div class="input">
-                        <input type="text" placeholder="Tu Email" >
-                    </div>
-
-                    <input type="submit" value="Inscribirme">
-                </form>
             </div>
         </div>
     </section>
